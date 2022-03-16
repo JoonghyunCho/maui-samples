@@ -1,28 +1,21 @@
-using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.LifecycleEvents;
 
 namespace HelloMaui
 {
-	public class Startup : IStartup
+	public static class MauiProgram
 	{
-		public void Configure(IAppHostBuilder appBuilder)
+		public static MauiApp CreateMauiApp()
 		{
-			appBuilder
+			var builder = MauiApp.CreateBuilder();
+			builder
 				.UseMauiApp<App>()
-				.ConfigureFonts(fonts => {
+				.ConfigureFonts(fonts =>
+				{
 					fonts.AddFont("ionicons.ttf", "IonIcons");
-				})
-				.ConfigureLifecycleEvents(lifecycle => {
-					#if ANDROID
-					lifecycle.AddAndroid(d => {
-						d.OnBackPressed(activity => {
-							System.Diagnostics.Debug.WriteLine("Back button pressed!");
-						});
-					});
-					#endif
 				});
+
+			return builder.Build();
 		}
 	}
 }

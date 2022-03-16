@@ -3,15 +3,15 @@
              x:Class="HelloMaui.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30', Tizen='60'}">
         <VerticalStackLayout>
 
             <Label Text="Welcome to .NET MAUI!"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                FontSize="128"
                 HorizontalOptions="CenterAndExpand" />
 
-            <Label Text=".NET 6 Preview 6"
+            <Label Text=".NET 6 RC 1"
                 HorizontalOptions="CenterAndExpand" />
 
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
@@ -21,7 +21,6 @@
             </HorizontalStackLayout>
 
             <Label Text="Click the button. You know you want to!" 
-                FontSize="18"
                 x:Name="CounterLabel"
                 HorizontalOptions="CenterAndExpand" />
 
